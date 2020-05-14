@@ -67,7 +67,57 @@ for file_ in list_:
             else: 
                 os.makedirs(path+filepath)
                 shutil.move(path_, path+filepath)
-                 
+        elif ('ASCII text' in f.from_file(path_)):
+            if path_.endswith('.py'):
+                filepath = 'Python' 
+                # Check if directory exists
+                if os.path.exists(path+filepath): 
+                    shutil.move(path_, path+filepath)  
+                # This will create a new directory, 
+                # if the directory does not already exist 
+                else: 
+                    os.makedirs(path+filepath)
+                    shutil.move(path_, path+filepath)
+            if path_.endswith('.txt'):
+                filepath = 'Raw Text' 
+                # Check if directory exists
+                if os.path.exists(path+filepath): 
+                    shutil.move(path_, path+filepath)  
+                # This will create a new directory, 
+                # if the directory does not already exist 
+                else: 
+                    os.makedirs(path+filepath)
+                    shutil.move(path_, path+filepath)
+            else:
+                filepath = 'Various' 
+                # Check if directory exists
+                if os.path.exists(path+filepath): 
+                    shutil.move(path_, path+filepath)  
+                # This will create a new directory, 
+                # if the directory does not already exist 
+                else: 
+                    os.makedirs(path+filepath)
+                    shutil.move(path_, path+filepath)
+        elif ('executable' in f.from_file(path_)):
+            filepath = 'Executables' 
+            # Check if directory exists
+            if os.path.exists(path+filepath): 
+                shutil.move(path_, path+filepath)  
+            # This will create a new directory, 
+            # if the directory does not already exist 
+            else: 
+                os.makedirs(path+filepath)
+                shutil.move(path_, path+filepath)
+        else:
+            filepath = 'Various' 
+            # Check if directory exists
+            if os.path.exists(path+filepath): 
+                shutil.move(path_, path+filepath)  
+            # This will create a new directory, 
+            # if the directory does not already exist 
+            else: 
+                os.makedirs(path+filepath)
+                shutil.move(path_, path+filepath)
             
 
 
