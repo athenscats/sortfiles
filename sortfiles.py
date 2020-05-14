@@ -118,9 +118,3 @@ for file_ in list_:
             else: 
                 os.makedirs(path+filepath)
                 shutil.move(path_, path+filepath)
-            
-
-
-
-    if os.path.isfile(path_ ):    
-        print (f.from_file(path_))
